@@ -48,7 +48,7 @@ Sou graduando em estatística pela Universidade Federal do Espírito Santo.\
     name = "Sobre mim"
     identifier = "about"
     weight = 200
-    url = "/"
+    url = "/about"
 #[[menu.main]]
 #    name = "Imprint"
 #    identifier = "imprint"
