@@ -10,17 +10,17 @@ publishDir = "docs/"
 #googleAnalytics = "UA-1XXXXXXX1-1"
 
 [params]
-  logo = "/images/letrab.png"
+  logo = "/images/logo.png"
   description ="Meu blog pessoal!"
   #mailchimp = "you can provide a mailchimp-link here"
 
 [params.author]
   name = "Bruno Fagno"
-  thumbnail = "/images/brunim.png"
+  thumbnail = "/images/author.png"
   description = "Criador deste blog."
 
 [params.index]
-  picture = "/images/brunim.png"
+  picture = "/images/author.png"
   title = "Bruno Fagno"
   subtitle = "Seja bem-vindo ao meu blog pessoal!"
   mdtext = '''
