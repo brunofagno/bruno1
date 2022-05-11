@@ -16,7 +16,7 @@ publishDir = "docs/"
 
 [params.author]
   name = "Bruno Fagno"
-  thumbnail = "/images/author.png"
+  thumbnail = "/images/brunim.png"
   description = "Criador deste blog."
 
 [params.index]
