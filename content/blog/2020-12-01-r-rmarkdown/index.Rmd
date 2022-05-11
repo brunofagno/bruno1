@@ -13,7 +13,7 @@ tags:
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# Análise estatística da evolução dos casos de Síndromes Respiratórias Agudas Graves (SRAG) 
+# Análise descritiva (SRAG) 
 
 Trata-se de um estudo comparativo que tem como objetivo principal analisar o padrão da Síndrome Respiratória Aguda Grave (SRAG) nos períodos pré-pandêmico e pandêmico no estado do Espírito Santo. As análises são referentes a janeiro de 2015 a dezembro de 2019, para o período anterior a pandemia, e janeiro a dezembro de 2020 para o período pandêmico. No período anterior à pandemia foram notificados 3.178 casos de SRAG no ES, 52 casos/mês e 0,72 casos/1000 hab.. Na pandemia, os casos de SRAG subiram para 12.056, equivalente a 1.004 casos/mês e 2,97 casos/1000 hab., o que corresponde a um aumento mensal de 19 vezes. No diagnóstico final dos casos de SRAG 65,42% foram por COVID-19. Além disso, o número de casos em idosos subiu de 21,58% para 55,05%.
 
@@ -39,7 +39,7 @@ sexo = data.frame(Período = c('Pandêmico','Pandêmico',
 sexo %>% ggplot(aes(x = Período, y = Percentual, fill = Sexo)) +
   geom_col(position = "dodge") +
   theme_ipsum() + 
-  ggtitle("Percentual de casos de SRAG")
+  ggtitle("Percentual de casos de SRAG por sexo")
 
 ```
 
@@ -59,7 +59,7 @@ idade = data.frame(Período = c('Pandêmico','Pandêmico','Pandêmico','Pandêmi
 idade %>% ggplot(aes(x = Período, y = Percentual, fill = Idade)) +
   geom_col(position = "dodge") +
   theme_ipsum() + 
-  ggtitle("Percentual de casos de SRAG")
+  ggtitle("Percentual de casos de SRAG por idade")
 ```
 
 
@@ -77,7 +77,7 @@ evolucao = data.frame(Período = c('Pandêmico','Pandêmico',
 evolucao %>% ggplot(aes(x = Período, y = Percentual, fill = Evolução)) +
   geom_col(position = "dodge") +
   theme_ipsum() + 
-  ggtitle("Percentual de casos de SRAG")
+  ggtitle("Percentual de casos de SRAG por evolução")
 
 ```
 
@@ -96,7 +96,7 @@ amostra = data.frame(Período = c('Pandêmico','Pandêmico',
 amostra %>% ggplot(aes(x = Período, y = Percentual, fill = Amostra)) +
   geom_col(position = "dodge") +
   theme_ipsum() + 
-  ggtitle("Percentual de casos de SRAG")
+  ggtitle("Percentual de casos de SRAG por amostra")
 
 ```
 

@@ -1,10 +1,12 @@
 ---
-title: "My First Post"
-date: 2018-10-07T11:17:14+02:00
+title: "O blog"
+date: 2022-05-10T11:17:14+02:00
 publishdate: 2018-10-07T11:17:14+02:00
 image: "/images/blog/1.jpg"
-tags: ["interesting"]
+tags: ["interesse"]
 comments: false
 ---
-# This is my first post
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper libero quis dictum dapibus. Nulla egestas vitae augue eu rutrum. Duis ullamcorper dictum ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tortor dui, fermentum non dapibus id, volutpat non odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas fringilla tempus urna ac laoreet. Curabitur sed bibendum lectus. Vivamus gravida venenatis porttitor. Phasellus aliquet nibh vel accumsan malesuada. Nulla nibh enim, auctor nec rhoncus a, pulvinar at tortor. Donec sodales consequat dolor et condimentum. Praesent convallis massa sit amet ultrices porta. Sed commodo, odio et porttitor fringilla, mi tortor sodales nulla, a fermentum dolor mi pulvinar mi. 
+# Minha primeira publicação
+Neste último semestre na universidade estou tendo a oportunidade de participar de uma disciplina que, com certeza, contribuirá muito para o meu aprendizado: Ciência de Dados. Incentivado pelo professor que leciona a disciplina criei este blog. 
+O blog é uma maneira de se apresentar para o mundo e expor aquilo que você produz. Dessa forma, você não precisa esperar grandes oportunidades para que te conheçam, você simplesmente se apresenta! 
+Meu nome é Bruno, estudante de estatística, e a sua presença aqui é muito gratificante para mim. Espero contribuir com você de alguma forma. 
