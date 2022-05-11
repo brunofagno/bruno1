@@ -10,33 +10,33 @@ publishDir = "docs/"
 #googleAnalytics = "UA-1XXXXXXX1-1"
 
 [params]
-  logo = "/images/logo.png"
-  description ="the clean blog!"
+  logo = "/images/letrab.png"
+  description ="Meu blog pessoal!"
   #mailchimp = "you can provide a mailchimp-link here"
 
 [params.author]
-  name = "John Doe"
-  thumbnail = "/images/author.png"
-  description = "Creator of this blog."
+  name = "Bruno Fagno"
+  thumbnail = "/images/brunim.png"
+  description = "Criador deste blog."
 
 [params.index]
-  picture = "/images/author.png"
-  title = "John Doe"
-  subtitle = "I'm a unique placeholder. Working here and there!"
+  picture = "/images/brunim.png"
+  title = "Bruno Fagno"
+  subtitle = "Seja bem-vindo ao meu blog pessoal!"
   mdtext = '''
-Currently trying to get this blog running, still don't know what the blog will be about!\
-**This textblock is a demonstration of the mdtext-param.**\
-### This is a markdown heading
+Sou graduando em estatística pela Universidade Federal do Espírito Santo.\
+**Neste blog apresentarei análises estatísticas realizadas nas linguagens R e Python.**
+### Vamos lá!
 '''
   alertbar = false
 
 [params.social]
-  github = "<username>"
-  linkedin = "<username>"
-  xing = "<username>"
-  medium = "<username>"
-  twitter = "<username>"
-  instagram = "<username>"
+  github = "<brunofagno>"
+  #linkedin = "<username>"
+  #xing = "<username>"
+  #medium = "<username>"
+  #twitter = "<username>"
+  instagram = "<brunofagno>"
 
 ## Main Menu
 [[menu.main]]
@@ -45,12 +45,12 @@ Currently trying to get this blog running, still don't know what the blog will b
     identifier = "blog"
     url = "/blog"
 [[menu.main]]
-    name = "About Me"
+    name = "Sobre mim"
     identifier = "about"
     weight = 200
     url = "/"
-[[menu.main]]
-    name = "Imprint"
-    identifier = "imprint"
-    weight = 200
-    url = "/static/imprint"
+#[[menu.main]]
+#    name = "Imprint"
+#    identifier = "imprint"
+#    weight = 200
+#    url = "/static/imprint"

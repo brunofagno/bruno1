@@ -9,12 +9,12 @@
     <copyright>John Doe - All rights reserved</copyright>
     <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="https://example.com/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello R Markdown</title>
+      <title>Síndrome Respiratória Aguda Grave (SRAG)</title>
       <link>https://example.com/blog/2020-12-01-r-rmarkdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
       <guid>https://example.com/blog/2020-12-01-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.</description>
+      <description>Análise estatística da evolução dos casos de Síndromes Respiratórias Agudas Graves (SRAG)Trata-se de um estudo comparativo que tem como objetivo principal analisar o padrão da Síndrome Respiratória Aguda Grave (SRAG) nos períodos pré-pandêmico e pandêmico no estado do Espírito Santo.</description>
     </item>
     
   </channel>
