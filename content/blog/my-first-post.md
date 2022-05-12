@@ -1,7 +1,7 @@
 ---
 title: "O blog"
 date: 2022-05-10T11:17:14+02:00
-publishdate: 2022-05-10T11:17:14+02:00
+publishdate: 2018-10-19T11:17:14+02:00
 image: "/images/blog/1.jpg"
 tags: ["interesse"]
 comments: false
