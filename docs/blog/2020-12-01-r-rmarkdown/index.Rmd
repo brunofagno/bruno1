@@ -39,7 +39,7 @@ sexo = data.frame(Período = c('Pandêmico','Pandêmico',
 sexo %>% ggplot(aes(x = Período, y = Percentual, fill = Sexo)) +
   geom_col(position = "dodge") +
   theme_ipsum() + 
-  ggtitle("Percentual de casos de SRAG por sexo")
+  ggtitle("Percentual de casos de SRAG")
 
 ```
 
@@ -59,7 +59,7 @@ idade = data.frame(Período = c('Pandêmico','Pandêmico','Pandêmico','Pandêmi
 idade %>% ggplot(aes(x = Período, y = Percentual, fill = Idade)) +
   geom_col(position = "dodge") +
   theme_ipsum() + 
-  ggtitle("Percentual de casos de SRAG por idade")
+  ggtitle("Percentual de casos de SRAG")
 ```
 
 
@@ -77,7 +77,7 @@ evolucao = data.frame(Período = c('Pandêmico','Pandêmico',
 evolucao %>% ggplot(aes(x = Período, y = Percentual, fill = Evolução)) +
   geom_col(position = "dodge") +
   theme_ipsum() + 
-  ggtitle("Percentual de casos de SRAG por evolução")
+  ggtitle("Percentual de casos de SRAG")
 
 ```
 
@@ -96,7 +96,7 @@ amostra = data.frame(Período = c('Pandêmico','Pandêmico',
 amostra %>% ggplot(aes(x = Período, y = Percentual, fill = Amostra)) +
   geom_col(position = "dodge") +
   theme_ipsum() + 
-  ggtitle("Percentual de casos de SRAG por amostra")
+  ggtitle("Percentual de casos de SRAG")
 
 ```
 
