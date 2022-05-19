@@ -1,6 +1,6 @@
 baseURL = "https://brunofagno.github.io/bruno1/"
 languageCode = "en-us"
-title = "Mediumish"
+title = "Bruno Fagno"
 theme = "mediumish-gohugo-theme"
 summaryLength = 25
 copyright = "Bruno Fagno - Direitos autorais"
@@ -31,12 +31,12 @@ Sou graduando em estatística pela Universidade Federal do Espírito Santo.\
   alertbar = false
 
 [params.social]
-  github = "<brunofagno>"
+  github = "brunofagno"
   #linkedin = "<username>"
   #xing = "<username>"
   #medium = "<username>"
   #twitter = "<username>"
-  instagram = "<brunofagno>"
+  instagram = "brunofagno"
 
 ## Main Menu
 [[menu.main]]
