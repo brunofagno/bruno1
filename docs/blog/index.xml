@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Bruno Fagno - Direitos autorais</copyright>
-    <lastBuildDate>Tue, 10 May 2022 11:17:14 +0200</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acidentes </title>
+      <link>https://brunofagno.github.io/bruno1/blog/2022-05-19-acidentes/</link>
+      <pubDate>Thu, 19 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://brunofagno.github.io/bruno1/blog/2022-05-19-acidentes/</guid>
+      <description>Em breve.</description>
+    </item>
+    
+    <item>
+      <title>Síndrome Respiratória Aguda Grave (SRAG)</title>
+      <link>https://brunofagno.github.io/bruno1/blog/2022-05-19-srag/</link>
+      <pubDate>Thu, 19 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://brunofagno.github.io/bruno1/blog/2022-05-19-srag/</guid>
+      <description>Análise descritiva (SRAG)Trata-se de um estudo comparativo que tem como objetivo principal analisar o perfil nos pacientes com Síndrome Respiratória Aguda Grave (SRAG) nos períodos pré-pandêmico e pandêmico no estado do Espírito Santo.</description>
+    </item>
+    
     <item>
       <title>O blog</title>
       <link>https://brunofagno.github.io/bruno1/blog/my-first-post/</link>
@@ -15,15 +33,6 @@
       
       <guid>https://brunofagno.github.io/bruno1/blog/my-first-post/</guid>
       <description>Minha primeira publicação Neste último semestre na universidade estou tendo a oportunidade de participar de uma disciplina que, com certeza, contribuirá muito para o meu aprendizado: Ciência de Dados.</description>
-    </item>
-    
-    <item>
-      <title>Síndrome Respiratória Aguda Grave (SRAG)</title>
-      <link>https://brunofagno.github.io/bruno1/blog/2020-12-01-r-rmarkdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      
-      <guid>https://brunofagno.github.io/bruno1/blog/2020-12-01-r-rmarkdown/</guid>
-      <description>Análise descritiva (SRAG)Trata-se de um estudo comparativo que tem como objetivo principal analisar o perfil nos pacientes com Síndrome Respiratória Aguda Grave (SRAG) nos períodos pré-pandêmico e pandêmico no estado do Espírito Santo.</description>
     </item>
     
   </channel>

@@ -1,0 +1,103 @@
+---
+title: "Síndrome Respiratória Aguda Grave (SRAG)"
+author: "Bruno Fagno"
+date: '2022-05-19'
+categories: R
+tags:
+- Análise descritiva
+- SRAG
+- Pandemia
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# Análise descritiva (SRAG) 
+
+Trata-se de um estudo comparativo que tem como objetivo principal analisar o perfil nos pacientes com Síndrome Respiratória Aguda Grave (SRAG) nos períodos pré-pandêmico e pandêmico no estado do Espírito Santo. As análises são referentes a janeiro de 2015 a dezembro de 2019, para o período anterior a pandemia, e janeiro a dezembro de 2020 para o período pandêmico. No período anterior à pandemia foram notificados 3.178 casos de SRAG no ES, 52 casos/mês e 0,72 casos/1000 hab.. Na pandemia, os casos de SRAG subiram para 12.056, equivalente a 1.004 casos/mês e 2,97 casos/1000 hab., o que corresponde a um aumento mensal de 19 vezes. No diagnóstico final dos casos de SRAG 65,42% foram por COVID-19. Além disso, o número de casos em idosos subiu de 21,58% para 55,05%.
+
+
+```{r, include = FALSE, warning = FALSE}
+library(readr)
+library(tidyverse)
+library(hrbrthemes)
+```
+
+
+No período pré-pandêmico a ocorrência de SRAG era predominante em mulheres. Na pandemia, a maior parte dos casos foram registrados em indivíduos do sexo masculino.
+
+```{r, echo = FALSE, warning = FALSE}
+## sexo 
+
+sexo = data.frame(Período = c('Pandêmico','Pandêmico',
+                              'Pré-pandêmico','Pré-pandêmico'),
+                  Sexo = c('Feminino','Masculino',
+                           'Feminino','Masculino'),
+                  Percentual = c(45.87,54.13,52.17,47.83))
+
+sexo %>% ggplot(aes(x = Período, y = Percentual, fill = Sexo)) +
+  geom_col(position = "dodge") +
+  theme_ipsum() + 
+  ggtitle("Percentual de casos de SRAG")
+
+```
+
+A SRAG predominava, no período anterior à pandemia, em menores de 10 anos correspondendo a 36,28% dos casos. Com a pandemia a SRAG passou a predominar em idosos acima de 60 anos de idade, correspondendo a 55,05% dos casos
+
+```{r, echo = FALSE, warning = FALSE}
+## idade
+
+idade = data.frame(Período = c('Pandêmico','Pandêmico','Pandêmico','Pandêmico',
+                              'Pré-pandêmico','Pré-pandêmico','Pré-pandêmico','Pré-pandêmico'),
+                  Idade = c('0 – 10','10 – 19',
+                           '20 – 59','60 ou mais',
+                           '0 – 10','10 – 19',
+                           '20 – 59','60 ou mais'),
+                  Percentual = c(6.10,2.07,36.78,55.05,36.28,7.65,34.49,21.58))
+
+idade %>% ggplot(aes(x = Período, y = Percentual, fill = Idade)) +
+  geom_col(position = "dodge") +
+  theme_ipsum() + 
+  ggtitle("Percentual de casos de SRAG")
+```
+
+
+Enquanto no período anterior à pandemia 14,71% dos casos de SRAG evoluíam para óbito, no período pandêmico este número subiu para 51,27%, sendo 84,03% deles causados pela COVID-19.
+
+```{r, echo = FALSE, warning = FALSE}
+## evolucao 
+
+evolucao = data.frame(Período = c('Pandêmico','Pandêmico',
+                                  'Pré-pandêmico','Pré-pandêmico'),
+                      Evolução = c('Cura','Óbito',
+                                   'Cura','Óbito'),
+                      Percentual = c(48.09,51.27,85.29,14.71))
+
+evolucao %>% ggplot(aes(x = Período, y = Percentual, fill = Evolução)) +
+  geom_col(position = "dodge") +
+  theme_ipsum() + 
+  ggtitle("Percentual de casos de SRAG")
+
+```
+
+
+Na pandemia houve um aumento na realização de coleta de amostra para teste de diagnóstico, passando de 88,57% (no pré-pandemia) para 96,2%. Os tipos de amostra clínica coletados para o teste eram por secreção de nasofaringe, lava do broco alveolar, tecido post-mortem e LCR. 
+
+```{r, echo = FALSE, warning = FALSE}
+# amostra
+
+amostra = data.frame(Período = c('Pandêmico','Pandêmico',
+                              'Pré-pandêmico','Pré-pandêmico'),
+                  Amostra = c('Sim','Não',
+                           'Sim','Não'),
+                  Percentual = c(96.22,3.78,88.57,11.43))
+
+amostra %>% ggplot(aes(x = Período, y = Percentual, fill = Amostra)) +
+  geom_col(position = "dodge") +
+  theme_ipsum() + 
+  ggtitle("Percentual de casos de SRAG")
+
+```
+
+É evidente que o número de casos de SRAG no estado do Espírito Santo apresentou uma dinâmica diferente com a chegada da COVID-19. A começar pelo perfil dos pacientes, no período anterior a pandemia, os casos de SRAG predominavam em crianças com idade inferior a 10 anos, durante a pandemia a SRAG passou a ser maior entre idosos com idade superior a 60 anos. Com a pandemia aumentou-se a realização para coleta de amostras. Além disso, a maior parte dos casos foram especificados como sendo por COVID-19. Enquanto no período pré-pandêmico cerca de 85% dos casos evoluíam para cura, com a pandemia cerca de 51% dos casos de SRAG no estado tiveram óbito confirmado. É importante destacar o notório crescimento do número de casos de SRAG com a COVID-19. O aumento de 279% do período pré-pandêmico para o período pandêmico evidencia esse crescimento.
