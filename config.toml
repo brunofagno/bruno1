@@ -9,9 +9,9 @@ publishDir = "docs/"
 #disqusShortname = "your-shortname-here"
 #googleAnalytics = "UA-1XXXXXXX1-1"
 
-[params]
-  logo = "/images/letrab.png"
-  description ="Meu blog pessoal!"
+#[params]
+#  logo = "/images/letrab.png"
+#  description ="Meu blog pessoal!"
   #mailchimp = "you can provide a mailchimp-link here"
 
 [params.author]
