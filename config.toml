@@ -2,16 +2,16 @@ baseURL = "https://brunofagno.github.io/bruno1/"
 languageCode = "en-us"
 title = "Bruno Fagno"
 theme = "mediumish-gohugo-theme"
-summaryLength = 20
+summaryLength = 25
 copyright = "Bruno Fagno - Direitos autorais"
 enableEmoji = true
 publishDir = "docs/"
 #disqusShortname = "your-shortname-here"
 #googleAnalytics = "UA-1XXXXXXX1-1"
 
-#[params]
-#  logo = "/images/letrab.png"
-#  description ="Meu blog pessoal!"
+[params]
+  logo = "/images/letrab.png"
+  description ="Meu blog pessoal!"
   #mailchimp = "you can provide a mailchimp-link here"
 
 [params.author]
