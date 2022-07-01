@@ -7,16 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Bruno Fagno - Direitos autorais</copyright>
-    <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Acidentes em 2020 (análise simples em python)</title>
-      <link>https://brunofagno.github.io/bruno1/blog/acidentes/acidentes/</link>
-      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://brunofagno.github.io/bruno1/blog/acidentes/acidentes/</guid>
-      <description>As análises realizadas em python apresentadas aqui são relativas aos acidentes que ocorreram em 2020 nas rodovias federais do Brasil. Minas Gerais, Santa Catarina e Paraná lideram o ranking de acidentes neste ano.</description>
-    </item>
-    
+    <lastBuildDate>Thu, 19 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Síndrome Respiratória Aguda Grave (SRAG)</title>
       <link>https://brunofagno.github.io/bruno1/blog/2022-05-19-srag/</link>
