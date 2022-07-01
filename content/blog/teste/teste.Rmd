@@ -1,0 +1,9 @@
+---
+title: "Só um teste"
+author: "Bruno Fagno"
+date: '2022-07-01'
+categories: R
+tags:
+- Análise descritiva
+---
+Breve
