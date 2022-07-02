@@ -9,12 +9,12 @@
     <copyright>Bruno Fagno - Direitos autorais</copyright>
     <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/tags/mapa-de-calor/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Só um teste</title>
+      <title>Comparação de genomas</title>
       <link>https://brunofagno.github.io/bruno1/blog/teste/teste/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://brunofagno.github.io/bruno1/blog/teste/teste/</guid>
-      <description>(aqui)[https://mybinder.org/v2/gh/brunofagno/desafio1/8485711e0990c4a1898c8709a67ba27aec5ee7ea?urlpath=lab%2Ftree%2Fdesafio.ipynb]</description>
+      <description>A análise realizada aqui teve o objetivo de comparar duas sequências de DNA: SARS-CoV-2 identificado na cidade de Wuhan (China) e o Virus da Influenza A identificado na California (US).</description>
     </item>
     
   </channel>
