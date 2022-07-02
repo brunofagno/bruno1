@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Bruno Fagno</title>
-    <link>https://brunofagno.github.io/bruno1/categories/python/</link>
-    <description>Recent content in Python on Bruno Fagno</description>
+    <title>Mapa de calor on Bruno Fagno</title>
+    <link>https://brunofagno.github.io/bruno1/tags/mapa-de-calor/</link>
+    <description>Recent content in Mapa de calor on Bruno Fagno</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Bruno Fagno - Direitos autorais</copyright>
-    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/tags/mapa-de-calor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Só um teste</title>
       <link>https://brunofagno.github.io/bruno1/blog/teste/teste/</link>
