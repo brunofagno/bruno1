@@ -11,4 +11,4 @@ A análise realizada [aqui](https://mybinder.org/v2/gh/brunofagno/desafio1/84857
 
 O DNA é uma molécula presente em todos os seres vivos, que é responsável por armazenar as caracterı́sticas hereditárias. Ela é composta por sequências de nucleotı́deos, que podem ser de quatro tipos: Adenina (A), Timina (T), Citosina (C) ou Guanina (G).
 
-Analisou-se a quantidade de pares de nucleotídeos na molécula de DNA da SARS-CoV-2 e o Virus da Influenza A. Os pares de ambas estão representadas no mapa de calor no link disponibilizado.
+Analisou-se, assim, a quantidade de pares de nucleotídeos na molécula de DNA da SARS-CoV-2 e o Virus da Influenza A. Os pares de ambas estão representadas no mapa de calor no link disponibilizado.
