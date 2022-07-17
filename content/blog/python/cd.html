@@ -1,0 +1,73 @@
+---
+title: "Web scraping em python"
+author: "Bruno Fagno"
+date: '2022-07-17'
+categories: Python
+tags:
+- Site
+---
+
+
+
+<p>Neste post apresento como extrair dados de um site na web em python. Como exemplo, utilizei dados sobre o total populacional do estado do Espírito Santo.</p>
+<pre class="r"><code>import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+url = &#39;https://pt.wikipedia.org/wiki/Lista_de_munic%C3%ADpios_do_Esp%C3%ADrito_Santo_por_popula%C3%A7%C3%A3o&#39;
+
+site = requests.get(url)
+
+print(site)
+
+
+soup = BeautifulSoup(site.text, &#39;html.parser&#39;)
+
+print(soup.prettify())
+
+
+tabela = soup.find_all(&#39;table&#39;, {&#39;class&#39;: &#39;wikitable&#39;})
+
+print(tabela)
+
+
+tabela = tabela[0]
+
+titulos = [i.text for i in tabela.find_all(&#39;th&#39;)]
+
+print(titulos)
+
+titulos[2] = &#39;População&#39;
+
+# Criando o dataframe
+df = pd.DataFrame(columns = titulos)
+
+df
+
+
+print(tabela.find_all(&#39;tr&#39;))
+
+print([type(item) for item in list(tabela.children)])
+
+print([item for item in list(tabela.children)])
+
+print(tabela.find_all(&#39;tr&#39;)[1].find_all(&#39;td&#39;))
+
+print([i.text for i in tabela.find_all(&#39;tr&#39;)[1].find_all(&#39;td&#39;)])
+
+
+
+for j in tabela.find_all(&#39;tr&#39;)[1:]:
+    row_data = j.find_all(&#39;td&#39;)
+    row = [i.text for i in row_data]
+    length = len(df)
+    df.loc[length] = row
+
+
+
+df = df.replace({r&#39;[\n\[2\]\.\s]&#39;:&#39;&#39;}, regex=True)
+
+df.head(20)
+
+
+df.to_csv(&#39;dados.csv&#39;, index = False)</code></pre>

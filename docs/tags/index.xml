@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Bruno Fagno - Direitos autorais</copyright>
-    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Site</title>
+      <link>https://brunofagno.github.io/bruno1/tags/site/</link>
+      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://brunofagno.github.io/bruno1/tags/site/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Mapa de calor</title>
       <link>https://brunofagno.github.io/bruno1/tags/mapa-de-calor/</link>

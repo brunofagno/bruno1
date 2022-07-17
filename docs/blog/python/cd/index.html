@@ -6,20 +6,20 @@
 	
 	<link rel="icon" href="/bruno1/images/letrab.png">
 	
-	<title>Comparação de genomas | Bruno Fagno</title>
+	<title>Web scraping em python | Bruno Fagno</title>
 	
 	
 
 	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Comparação de genomas"/>
-<meta name="twitter:description" content="A análise realizada aqui teve o objetivo de comparar duas sequências de DNA: SARS-CoV-2 identificado na cidade de Wuhan (China) e o Virus da Influenza A identificado na California (US)."/>
+<meta name="twitter:title" content="Web scraping em python"/>
+<meta name="twitter:description" content="Neste post apresento como extrair dados de um site na web em python. Como exemplo, utilizei dados sobre o total populacional do estado do Espírito Santo."/>
 
-	<meta property="og:title" content="Comparação de genomas" />
-<meta property="og:description" content="A análise realizada aqui teve o objetivo de comparar duas sequências de DNA: SARS-CoV-2 identificado na cidade de Wuhan (China) e o Virus da Influenza A identificado na California (US)." />
+	<meta property="og:title" content="Web scraping em python" />
+<meta property="og:description" content="Neste post apresento como extrair dados de um site na web em python. Como exemplo, utilizei dados sobre o total populacional do estado do Espírito Santo." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://brunofagno.github.io/bruno1/blog/teste/teste/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-07-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-07-01T00:00:00+00:00" />
+<meta property="og:url" content="https://brunofagno.github.io/bruno1/blog/python/cd/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-07-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-17T00:00:00+00:00" />
 
 
 
@@ -89,19 +89,19 @@
     <p>Share</p>
     <ul>
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=Compara%c3%a7%c3%a3o%20de%20genomas&url=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fteste%2fteste%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Web%20scraping%20em%20python&url=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fpython%2fcd%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
         <i class="fab fa-twitter"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fteste%2fteste%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fpython%2fcd%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
         <i class="fab fa-facebook-f"></i>
         </a>
         </li>
 
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fteste%2fteste%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fpython%2fcd%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
         <i class="fab fa-xing"></i>
         </a>
         </li>        
@@ -126,7 +126,7 @@
                                 <span class="author-description">
                                     Criador deste blog.<br>
                                     <i class="far fa-star"></i>
-                                    Jul 1, 2022
+                                    Jul 17, 2022
                                     <i class="far fa-clock clock"></i>
                                     1 min read
                                 </span>					
@@ -136,7 +136,7 @@
                         
                                                 
                         
-                        <h1 class="posttitle">Comparação de genomas</h1> 
+                        <h1 class="posttitle">Web scraping em python</h1> 
                     </div>
 
                     
@@ -149,9 +149,68 @@
                         
 
 
-<p>A análise realizada <a href="https://mybinder.org/v2/gh/brunofagno/desafio1/8485711e0990c4a1898c8709a67ba27aec5ee7ea?urlpath=lab%2Ftree%2Fdesafio.ipynb">aqui</a> teve o objetivo de comparar duas sequências de DNA: SARS-CoV-2 identificado na cidade de Wuhan (China) e o Virus da Influenza A identificado na California (US).</p>
-<p>O DNA é uma molécula presente em todos os seres vivos, que é responsável por armazenar as caracterı́sticas hereditárias. Ela é composta por sequências de nucleotı́deos, que podem ser de quatro tipos: Adenina (A), Timina (T), Citosina (C) ou Guanina (G).</p>
-<p>Analisou-se a quantidade de pares de nucleotídeos na molécula de DNA da SARS-CoV-2 e o Virus da Influenza A. Os pares de ambas estão representadas no mapa de calor no link disponibilizado.</p>
+<p>Neste post apresento como extrair dados de um site na web em python. Como exemplo, utilizei dados sobre o total populacional do estado do Espírito Santo.</p>
+<pre class="r"><code>import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+url = &#39;https://pt.wikipedia.org/wiki/Lista_de_munic%C3%ADpios_do_Esp%C3%ADrito_Santo_por_popula%C3%A7%C3%A3o&#39;
+
+site = requests.get(url)
+
+print(site)
+
+
+soup = BeautifulSoup(site.text, &#39;html.parser&#39;)
+
+print(soup.prettify())
+
+
+tabela = soup.find_all(&#39;table&#39;, {&#39;class&#39;: &#39;wikitable&#39;})
+
+print(tabela)
+
+
+tabela = tabela[0]
+
+titulos = [i.text for i in tabela.find_all(&#39;th&#39;)]
+
+print(titulos)
+
+titulos[2] = &#39;População&#39;
+
+# Criando o dataframe
+df = pd.DataFrame(columns = titulos)
+
+df
+
+
+print(tabela.find_all(&#39;tr&#39;))
+
+print([type(item) for item in list(tabela.children)])
+
+print([item for item in list(tabela.children)])
+
+print(tabela.find_all(&#39;tr&#39;)[1].find_all(&#39;td&#39;))
+
+print([i.text for i in tabela.find_all(&#39;tr&#39;)[1].find_all(&#39;td&#39;)])
+
+
+
+for j in tabela.find_all(&#39;tr&#39;)[1:]:
+    row_data = j.find_all(&#39;td&#39;)
+    row = [i.text for i in row_data]
+    length = len(df)
+    df.loc[length] = row
+
+
+
+df = df.replace({r&#39;[\n\[2\]\.\s]&#39;:&#39;&#39;}, regex=True)
+
+df.head(20)
+
+
+df.to_csv(&#39;dados.csv&#39;, index = False)</code></pre>
 
                     </div>
                     
@@ -160,7 +219,7 @@
                         <ul class="tags">
                         
                         <li>
-                        <a href="/bruno1/tags/mapa-de-calor">Mapa de calor</a>
+                        <a href="/bruno1/tags/site">Site</a>
                         </li>
                         
                         </ul>
@@ -170,10 +229,8 @@
                     
                     <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
                     
-                        <a class="d-block col-md-6" href="https://brunofagno.github.io/bruno1/blog/python/cd/"> &laquo; Web scraping em python</a>
                     
-                    
-                        <a class="d-block col-md-6 text-lg-right" href="https://brunofagno.github.io/bruno1/blog/2022-05-19-srag/">Síndrome Respiratória Aguda Grave (SRAG) &raquo;</a>
+                        <a class="d-block col-md-6 text-lg-right" href="https://brunofagno.github.io/bruno1/blog/teste/teste/">Comparação de genomas &raquo;</a>
                     
                     <div class="clearfix"></div>
                     </div>
