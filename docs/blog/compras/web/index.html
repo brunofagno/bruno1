@@ -6,20 +6,20 @@
 	
 	<link rel="icon" href="/bruno1/images/letrab.png">
 	
-	<title>Web scraping em python | Bruno Fagno</title>
+	<title>Web scraping II em python | Bruno Fagno</title>
 	
 	
 
 	<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Web scraping em python"/>
-<meta name="twitter:description" content="Neste post apresento como extrair dados de um site na web em python. Como exemplo, utilizei dados sobre o total populacional do estado do Espírito Santo."/>
+<meta name="twitter:title" content="Web scraping II em python"/>
+<meta name="twitter:description" content="Neste post apresento como extrair dados de um site na web em python. No exemplo apresentado, crio um dataframe com nome do produto, descrição, link do produto, avaliações, número de reviews e preços deste site."/>
 
-	<meta property="og:title" content="Web scraping em python" />
-<meta property="og:description" content="Neste post apresento como extrair dados de um site na web em python. Como exemplo, utilizei dados sobre o total populacional do estado do Espírito Santo." />
+	<meta property="og:title" content="Web scraping II em python" />
+<meta property="og:description" content="Neste post apresento como extrair dados de um site na web em python. No exemplo apresentado, crio um dataframe com nome do produto, descrição, link do produto, avaliações, número de reviews e preços deste site." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://brunofagno.github.io/bruno1/blog/python/cd/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-07-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-07-17T00:00:00+00:00" />
+<meta property="og:url" content="https://brunofagno.github.io/bruno1/blog/compras/web/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-07-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-22T00:00:00+00:00" />
 
 
 
@@ -89,19 +89,19 @@
     <p>Share</p>
     <ul>
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=Web%20scraping%20em%20python&url=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fpython%2fcd%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Web%20scraping%20II%20em%20python&url=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fcompras%2fweb%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
         <i class="fab fa-twitter"></i>
         </a>
         </li>
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fpython%2fcd%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fcompras%2fweb%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
         <i class="fab fa-facebook-f"></i>
         </a>
         </li>
 
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fpython%2fcd%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://www.xing.com/spi/shares/new?url=https%3a%2f%2fbrunofagno.github.io%2fbruno1%2fblog%2fcompras%2fweb%2f" onclick="window.open(this.href, 'xing-share', 'width=550,height=435');return false;">
         <i class="fab fa-xing"></i>
         </a>
         </li>        
@@ -126,7 +126,7 @@
                                 <span class="author-description">
                                     Criador deste blog.<br>
                                     <i class="far fa-star"></i>
-                                    Jul 17, 2022
+                                    Jul 22, 2022
                                     <i class="far fa-clock clock"></i>
                                     1 min read
                                 </span>					
@@ -136,7 +136,7 @@
                         
                                                 
                         
-                        <h1 class="posttitle">Web scraping em python</h1> 
+                        <h1 class="posttitle">Web scraping II em python</h1> 
                     </div>
 
                     
@@ -149,68 +149,60 @@
                         
 
 
-<p>Neste post apresento como extrair dados de um site na web em python. Como exemplo, utilizei dados sobre o total populacional do estado do Espírito Santo.</p>
-<pre class="r"><code>import requests
+<p>Neste post apresento como extrair dados de um site na web em python. No exemplo apresentado, crio um dataframe com nome do produto, descrição, link do produto, avaliações, número de reviews e preços <a href="https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops">deste</a> site.</p>
+<pre class="r"><code>import pandas as pd
+import numpy as np
+import requests
 from bs4 import BeautifulSoup
-import pandas as pd
+from lxml import etree
 
-url = &#39;https://pt.wikipedia.org/wiki/Lista_de_munic%C3%ADpios_do_Esp%C3%ADrito_Santo_por_popula%C3%A7%C3%A3o&#39;
+url = requests.get(&#39;https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops&#39;)
+print(url.status_code)
 
-site = requests.get(url)
 
+soup = BeautifulSoup(url.content,&#39;html.parser&#39;)
+print(soup)
+
+
+titulos = soup.find_all(&#39;a&#39;, attrs={&#39;class&#39;:&#39;title&#39;})
+titulos = [i.text for i in titulos]
+print(titulos)
+
+
+descricao = soup.find_all(&#39;p&#39;, attrs={&#39;class&#39;:&#39;description&#39;})
+descricao = [i.text for i in descricao]
+print(descricao)
+
+
+site = soup.find_all(&#39;a&#39;, attrs={&#39;href&#39;:&#39;/html/body/div[1]/div[3]/div/div[2]/div/div[2]/div/div[1]/h4[2]/a&#39;})
+site = [i.text for i in site]
 print(site)
 
 
-soup = BeautifulSoup(site.text, &#39;html.parser&#39;)
-
-print(soup.prettify())
-
-
-tabela = soup.find_all(&#39;table&#39;, {&#39;class&#39;: &#39;wikitable&#39;})
-
-print(tabela)
+reviews = soup.find_all(&#39;p&#39;, attrs={&#39;class&#39;:&#39;pull-right&#39;})
+reviews = [i.text for i in reviews]
+print(reviews)
 
 
-tabela = tabela[0]
-
-titulos = [i.text for i in tabela.find_all(&#39;th&#39;)]
-
-print(titulos)
-
-titulos[2] = &#39;População&#39;
-
-# Criando o dataframe
-df = pd.DataFrame(columns = titulos)
-
-df
+precos = soup.find_all(&#39;h4&#39;, attrs={&#39;class&#39;:&#39;pull-right price&#39;})
+precos = [i.text for i in precos]
+print(precos)
 
 
-print(tabela.find_all(&#39;tr&#39;))
-
-print([type(item) for item in list(tabela.children)])
-
-print([item for item in list(tabela.children)])
-
-print(tabela.find_all(&#39;tr&#39;)[1].find_all(&#39;td&#39;))
-
-print([i.text for i in tabela.find_all(&#39;tr&#39;)[1].find_all(&#39;td&#39;)])
+path = etree.HTML(str(soup))
+site = path.xpath(&quot;//div[@class=&#39;caption&#39;]//h4[2]//a&quot;)
+sites = [i.get(&#39;href&#39;) for i in site]
+print(sites)
 
 
-
-for j in tabela.find_all(&#39;tr&#39;)[1:]:
-    row_data = j.find_all(&#39;td&#39;)
-    row = [i.text for i in row_data]
-    length = len(df)
-    df.loc[length] = row
+avaliacoes = etree.HTML(str(soup))
+avaliacoes = path.xpath(&quot;//div[@class=&#39;ratings&#39;]//p[2]&quot;)
+avaliacoes = [i.get(&#39;data-rating&#39;) for i in avaliacoes]
+print(avaliacoes)
 
 
-
-df = df.replace({r&#39;[\n\[2\]\.\s]&#39;:&#39;&#39;}, regex=True)
-
-df.head(20)
-
-
-df.to_csv(&#39;dados.csv&#39;, index = False)</code></pre>
+df = pd.DataFrame({&quot;Título&quot;:titulos, &quot;Descrição&quot;:descricao,&quot;Site&quot;:sites,&quot;Reviews&quot;:reviews,&quot;Avaliação&quot;:avaliacoes})
+df.head()</code></pre>
 
                     </div>
                     
@@ -229,10 +221,8 @@ df.to_csv(&#39;dados.csv&#39;, index = False)</code></pre>
                     
                     <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
                     
-                        <a class="d-block col-md-6" href="https://brunofagno.github.io/bruno1/blog/compras/web/"> &laquo; Web scraping II em python</a>
                     
-                    
-                        <a class="d-block col-md-6 text-lg-right" href="https://brunofagno.github.io/bruno1/blog/teste/teste/">Comparação de genomas &raquo;</a>
+                        <a class="d-block col-md-6 text-lg-right" href="https://brunofagno.github.io/bruno1/blog/python/cd/">Web scraping em python &raquo;</a>
                     
                     <div class="clearfix"></div>
                     </div>

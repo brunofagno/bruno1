@@ -9,7 +9,7 @@ tags:
 
 Neste post apresento como extrair dados de um site na web em python. No exemplo apresentado, crio um dataframe com nome do produto, descrição, link do produto, avaliações, número de reviews e preços [deste](https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops) site.
 
-```{r, eval = FALSE}
+```{r, eval=FALSE}
 import pandas as pd
 import numpy as np
 import requests
