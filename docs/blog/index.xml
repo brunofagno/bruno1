@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Bruno Fagno - Direitos autorais</copyright>
-    <lastBuildDate>Sun, 17 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://brunofagno.github.io/bruno1/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web scraping II em python</title>
+      <link>https://brunofagno.github.io/bruno1/blog/compras/compras/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://brunofagno.github.io/bruno1/blog/compras/compras/</guid>
+      <description>Neste post apresento como extrair dados de um site na web em python. No exemplo apresentado, crio um dataframe com nome do produto, descrição, link do produto, avaliações, número de reviews e preços deste site.</description>
+    </item>
+    
     <item>
       <title>Web scraping em python</title>
       <link>https://brunofagno.github.io/bruno1/blog/python/cd/</link>
