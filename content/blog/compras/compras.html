@@ -1,0 +1,65 @@
+---
+title: "Web scraping II em python"
+author: "Bruno Fagno"
+date: '2022-07-17'
+categories: Python
+tags:
+- Site
+---
+
+
+
+<p>Neste post apresento como extrair dados de um site na web em python. No exemplo apresentado, crio um dataframe com nome do produto, descrição, link do produto, avaliações, número de reviews e preços <a href="https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops">deste</a> site.</p>
+<pre class="r"><code>import pandas as pd
+import numpy as np
+import requests
+from bs4 import BeautifulSoup
+from lxml import etree
+
+url = requests.get(&#39;https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops&#39;)
+print(url.status_code)
+
+
+soup = BeautifulSoup(url.content,&#39;html.parser&#39;)
+print(soup)
+
+
+titulos = soup.find_all(&#39;a&#39;, attrs={&#39;class&#39;:&#39;title&#39;})
+titulos = [i.text for i in titulos]
+print(titulos)
+
+
+descricao = soup.find_all(&#39;p&#39;, attrs={&#39;class&#39;:&#39;description&#39;})
+descricao = [i.text for i in descricao]
+print(descricao)
+
+
+site = soup.find_all(&#39;a&#39;, attrs={&#39;href&#39;:&#39;/html/body/div[1]/div[3]/div/div[2]/div/div[2]/div/div[1]/h4[2]/a&#39;})
+site = [i.text for i in site]
+print(site)
+
+
+reviews = soup.find_all(&#39;p&#39;, attrs={&#39;class&#39;:&#39;pull-right&#39;})
+reviews = [i.text for i in reviews]
+print(reviews)
+
+
+precos = soup.find_all(&#39;h4&#39;, attrs={&#39;class&#39;:&#39;pull-right price&#39;})
+precos = [i.text for i in precos]
+print(precos)
+
+
+path = etree.HTML(str(soup))
+site = path.xpath(&quot;//div[@class=&#39;caption&#39;]//h4[2]//a&quot;)
+sites = [i.get(&#39;href&#39;) for i in site]
+print(sites)
+
+
+avaliacoes = etree.HTML(str(soup))
+avaliacoes = path.xpath(&quot;//div[@class=&#39;ratings&#39;]//p[2]&quot;)
+avaliacoes = [i.get(&#39;data-rating&#39;) for i in avaliacoes]
+print(avaliacoes)
+
+
+df = pd.DataFrame({&quot;Título&quot;:titulos, &quot;Descrição&quot;:descricao,&quot;Site&quot;:sites,&quot;Reviews&quot;:reviews,&quot;Avaliação&quot;:avaliacoes})
+df.head()</code></pre>

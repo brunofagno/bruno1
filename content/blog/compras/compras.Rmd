@@ -1,0 +1,68 @@
+---
+title: "Web scraping II em python"
+author: "Bruno Fagno"
+date: '2022-07-17'
+categories: Python
+tags:
+- Site
+---
+
+Neste post apresento como extrair dados de um site na web em python. No exemplo apresentado, crio um dataframe com nome do produto, descrição, link do produto, avaliações, número de reviews e preços [deste](https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops) site.
+
+```{r, eval = FALSE}
+import pandas as pd
+import numpy as np
+import requests
+from bs4 import BeautifulSoup
+from lxml import etree
+
+url = requests.get('https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops')
+print(url.status_code)
+
+
+soup = BeautifulSoup(url.content,'html.parser')
+print(soup)
+
+
+titulos = soup.find_all('a', attrs={'class':'title'})
+titulos = [i.text for i in titulos]
+print(titulos)
+
+
+descricao = soup.find_all('p', attrs={'class':'description'})
+descricao = [i.text for i in descricao]
+print(descricao)
+
+
+site = soup.find_all('a', attrs={'href':'/html/body/div[1]/div[3]/div/div[2]/div/div[2]/div/div[1]/h4[2]/a'})
+site = [i.text for i in site]
+print(site)
+
+
+reviews = soup.find_all('p', attrs={'class':'pull-right'})
+reviews = [i.text for i in reviews]
+print(reviews)
+
+
+precos = soup.find_all('h4', attrs={'class':'pull-right price'})
+precos = [i.text for i in precos]
+print(precos)
+
+
+path = etree.HTML(str(soup))
+site = path.xpath("//div[@class='caption']//h4[2]//a")
+sites = [i.get('href') for i in site]
+print(sites)
+
+
+avaliacoes = etree.HTML(str(soup))
+avaliacoes = path.xpath("//div[@class='ratings']//p[2]")
+avaliacoes = [i.get('data-rating') for i in avaliacoes]
+print(avaliacoes)
+
+
+df = pd.DataFrame({"Título":titulos, "Descrição":descricao,"Site":sites,"Reviews":reviews,"Avaliação":avaliacoes})
+df.head()
+
+```
+
